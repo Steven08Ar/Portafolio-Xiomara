@@ -1,0 +1,146 @@
+.heroContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Spread columns apart */
+    padding: 0 5%;
+    pointer-events: none;
+    z-index: 5;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Left Column: Intro --- */
+.introWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 500px;
+    pointer-events: auto;
+    /* Allow interaction if needed */
+}
+
+.greetingBadge {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.introTitle {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.introDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-beige-light);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.keywordTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tag {
+    font-size: 0.8rem;
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    font-weight: 500;
+}
+
+/* --- Right Column: Name --- */
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.titleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.mainTitle {
+    font-size: 7rem;
+    font-weight: 500;
+    letter-spacing: -3px;
+    color: var(--color-white);
+    line-height: 0.9;
+    margin: 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.subTitle {
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: inherit;
+    font-style: italic;
+    color: var(--color-white);
+    margin: 0;
+    margin-top: -1rem;
+    margin-right: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1024px) {
+    .heroContainer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    .introWrapper {
+        align-items: center;
+        text-align: center;
+    }
+
+    .keywordTags {
+        justify-content: center;
+    }
+
+    .mainTitle {
+        font-size: 5rem;
+    }
+
+    .subTitle {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .introTitle {
+        font-size: 2.5rem;
+    }
+
+    .textWrapper,
+    .titleWrapper {
+        align-items: center;
+    }
+
+    .subTitle {
+        margin-right: 0;
+    }
+}

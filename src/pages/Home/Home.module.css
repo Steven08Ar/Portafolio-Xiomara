@@ -1,0 +1,53 @@
+.homeFrame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background-color: var(--color-beige);
+    background-image: url('../../assets/Fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the white border acts as the frame edge visually */
+.homeFrame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 12px solid #ffffff;
+    /* explicitly pure white to avoid any CSS var tinting */
+    border-radius: 40px;
+    z-index: 5;
+    /* Increased from 1 so content can sit on top */
+    pointer-events: none;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(204, 176, 194, 0.3) 100%);
+    z-index: 1;
+}
+
+.contentContainer {
+    position: absolute;
+    inset: 12px;
+    /* inside the white border */
+    z-index: 10;
+    /* Raised to be above the white border */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 2rem 0 2rem;
+    /* Top and Bottom padding 0 allows exact edge snaps */
+    box-sizing: border-box;
+    pointer-events: none;
+    /* Let clicks pass through empty space */
+}
+
+/* Allow clicks on children inside contentContainer */
+.contentContainer>* {
+    pointer-events: auto;
+}
